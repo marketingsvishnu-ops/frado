@@ -4,378 +4,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ATHLETIX — Sports Motivation</title>
+  <title>Rise & Grind | Sports Motivation</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #080808;
-      color: #fff;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
     }
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 20px 7%;
+    header {
+      background: #111;
+      color: white;
+      padding: 25px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-
-      background: rgba(8, 8, 8, 0.75);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo {
-      font-family: 'Anton', sans-serif;
-      font-size: 30px;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #c6ff00;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 35px;
+    header h1 {
+      font-size: 28px;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
+      margin-left: 20px;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #c6ff00;
+      color: #ff4d00;
     }
 
-    /* HERO */
     .hero {
-      min-height: 100vh;
+      min-height: 500px;
       display: flex;
       align-items: center;
-      padding: 120px 7% 70px;
-
+      padding: 70px 8%;
+      color: white;
       background:
-        linear-gradient(90deg, #080808 25%, rgba(8,8,8,.75), rgba(8,8,8,.2)),
-        url("https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=2000&q=90")
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211")
         center/cover;
     }
 
     .hero-content {
-      max-width: 750px;
+      max-width: 700px;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 8px 15px;
-      border: 1px solid #c6ff00;
-      color: #c6ff00;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(65px, 10vw, 145px);
-      line-height: .9;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero h1 span {
-      color: #c6ff00;
+    .hero h2 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      margin-top: 30px;
-      max-width: 600px;
-      color: #ccc;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      font-size: 20px;
+      margin-bottom: 30px;
     }
 
     .btn {
-      padding: 15px 30px;
+      display: inline-block;
+      padding: 13px 25px;
+      background: #ff4d00;
+      color: white;
       text-decoration: none;
-      font-weight: 700;
-      border-radius: 4px;
-      transition: .3s;
+      border-radius: 5px;
+      font-weight: bold;
     }
 
-    .primary {
-      background: #c6ff00;
-      color: #000;
-    }
-
-    .primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(198,255,0,.25);
-    }
-
-    .secondary {
-      border: 1px solid #555;
-      color: #fff;
-    }
-
-    .secondary:hover {
-      border-color: #c6ff00;
-      color: #c6ff00;
-    }
-
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-    }
-
-    .stat {
-      padding: 40px;
-      text-align: center;
-      border-right: 1px solid #222;
-    }
-
-    .stat:last-child {
-      border-right: none;
-    }
-
-    .stat h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: 48px;
-      color: #c6ff00;
-    }
-
-    .stat p {
-      color: #888;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* SECTION */
     .section {
-      padding: 100px 7%;
+      padding: 60px 8%;
     }
 
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 50px;
+    .section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
     }
 
-    .section-title h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: 65px;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    .section-title h2 span {
-      color: #c6ff00;
-    }
-
-    .section-title p {
-      color: #777;
-      max-width: 350px;
-      font-size: 14px;
-    }
-
-    /* BLOG CARDS */
-    .blog-grid {
+    .posts {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
     .card {
-      background: #111;
-      border: 1px solid #222;
+      background: white;
+      border-radius: 10px;
       overflow: hidden;
-      transition: .4s;
+      box-shadow: 0 5px 15px rgba(0,0,0,.1);
+      transition: transform .3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      border-color: #c6ff00;
+      transform: translateY(-8px);
     }
 
-    .card-image {
-      height: 280px;
-      overflow: hidden;
-    }
-
-    .card-image img {
+    .card img {
       width: 100%;
-      height: 100%;
+      height: 210px;
       object-fit: cover;
-      transition: .5s;
-    }
-
-    .card:hover img {
-      transform: scale(1.08);
     }
 
     .card-content {
-      padding: 25px;
-    }
-
-    .category {
-      color: #c6ff00;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      padding: 22px;
     }
 
     .card h3 {
-      font-size: 24px;
-      margin: 12px 0;
+      margin-bottom: 12px;
+      font-size: 22px;
     }
 
-    .card p {
-      color: #888;
-      font-size: 14px;
-      line-height: 1.7;
+    .quote {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 70px 15%;
     }
 
-    .read {
-      display: inline-block;
-      margin-top: 20px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
+    .quote p {
+      font-size: 32px;
+      font-weight: bold;
+      font-style: italic;
     }
 
-    .read:hover {
-      color: #c6ff00;
-    }
-
-    /* MOTIVATION */
-    .motivation {
-      min-height: 550px;
-      display: flex;
-      align-items: center;
-      padding: 80px 7%;
-
-      background:
-        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
-        url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=2000&q=90")
-        center/cover fixed;
-    }
-
-    .motivation-content {
+    .about {
       max-width: 850px;
+      margin: auto;
+      text-align: center;
     }
 
-    .motivation h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(55px, 8vw, 110px);
-      line-height: .95;
-      text-transform: uppercase;
-    }
-
-    .motivation h2 span {
-      color: #c6ff00;
-    }
-
-    .motivation p {
-      margin-top: 30px;
-      font-size: 18px;
-      color: #ccc;
-      max-width: 650px;
-    }
-
-    /* FOOTER */
     footer {
-      padding: 60px 7%;
-      background: #050505;
-      border-top: 1px solid #222;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #080808;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
     }
 
-    footer h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: 35px;
-    }
-
-    footer span {
-      color: #c6ff00;
-    }
-
-    footer p {
-      color: #666;
-      font-size: 13px;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 850px) {
-
-      nav ul {
-        display: none;
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
       }
 
-      .stats {
+      .hero h2 {
+        font-size: 40px;
+      }
+
+      .posts {
         grid-template-columns: 1fr;
       }
 
-      .stat {
-        border-right: none;
-        border-bottom: 1px solid #222;
-      }
-
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        display: block;
-      }
-
-      .section-title p {
-        margin-top: 20px;
-      }
-
-      footer {
-        display: block;
-        text-align: center;
-      }
-
-      footer p {
-        margin-top: 15px;
+      .quote p {
+        font-size: 24px;
       }
     }
   </style>
@@ -383,236 +173,99 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">ATHLET<span>IX</span></div>
+  <header>
+    <h1>RISE & GRIND</h1>
 
-    <ul>
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#stories">STORIES</a></li>
-      <li><a href="#motivation">MOTIVATION</a></li>
-      <li><a href="#about">ABOUT</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-
-  <!-- HERO -->
   <section class="hero" id="home">
-
     <div class="hero-content">
-
-      <div class="tag">THE ATHLETE MINDSET</div>
-
-      <h1>
-        BUILT<br>
-        TO <span>WIN.</span>
-      </h1>
-
+      <h2>Train Hard. Stay Hungry. Never Quit.</h2>
       <p>
-        Champions aren't created when the lights are on.
-        They're created in the moments nobody sees —
-        when you choose to keep going.
+        Your mindset is your greatest advantage.
+        Push your limits, embrace the struggle, and become
+        the athlete you were meant to be.
       </p>
-
-      <div class="buttons">
-        <a href="#stories" class="btn primary">
-          EXPLORE STORIES
-        </a>
-
-        <a href="#motivation" class="btn secondary">
-          GET MOTIVATED
-        </a>
-      </div>
-
+      <a href="#blog" class="btn">Read the Blog</a>
     </div>
-
   </section>
 
+  <section class="section" id="blog">
+    <h2>Latest Motivation</h2>
 
-  <!-- STATS -->
-  <section class="stats">
+    <div class="posts">
 
-    <div class="stat">
-      <h2>100%</h2>
-      <p>Commitment</p>
-    </div>
-
-    <div class="stat">
-      <h2>24/7</h2>
-      <p>Mindset</p>
-    </div>
-
-    <div class="stat">
-      <h2>1%</h2>
-      <p>Better Every Day</p>
-    </div>
-
-  </section>
-
-
-  <!-- BLOG -->
-  <section class="section" id="stories">
-
-    <div class="section-title">
-
-      <h2>
-        THE <span>GRIND</span>
-      </h2>
-
-      <p>
-        Stories, lessons and powerful reminders
-        for athletes who refuse to quit.
-      </p>
-
-    </div>
-
-
-    <div class="blog-grid">
-
-      <!-- CARD 1 -->
       <article class="card">
-
-        <div class="card-image">
-          <img
-            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=85"
-            alt="Runner training">
-        </div>
-
+        <img
+          src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c"
+          alt="Athlete training">
         <div class="card-content">
-
-          <div class="category">Discipline</div>
-
-          <h3>When Motivation Disappears</h3>
-
+          <h3>Discipline Beats Motivation</h3>
           <p>
-            You won't always feel motivated. That's exactly
-            when discipline becomes your greatest weapon.
+            Motivation can disappear, but discipline keeps you
+            moving forward. Build habits that make progress
+            unavoidable.
           </p>
-
-          <a href="#" class="read">READ STORY →</a>
-
         </div>
-
       </article>
 
-
-      <!-- CARD 2 -->
       <article class="card">
-
-        <div class="card-image">
-          <img
-            src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=85"
-            alt="Athlete working out">
-        </div>
-
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"
+          alt="Athlete working out">
         <div class="card-content">
-
-          <div class="category">Training</div>
-
-          <h3>Embrace The Hard Days</h3>
-
+          <h3>Push Beyond Your Limits</h3>
           <p>
-            The workouts that hurt today can become the
-            moments you remember with pride tomorrow.
+            The toughest workouts often create the strongest
+            athletes. When your mind says stop, remember why
+            you started.
           </p>
-
-          <a href="#" class="read">READ STORY →</a>
-
         </div>
-
       </article>
 
-
-      <!-- CARD 3 -->
       <article class="card">
-
-        <div class="card-image">
-          <img
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=85"
-            alt="Fitness athlete">
-        </div>
-
+        <img
+          src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5"
+          alt="Runner on track">
         <div class="card-content">
-
-          <div class="category">Mindset</div>
-
-          <h3>Become Your Own Competition</h3>
-
+          <h3>Every Champion Starts Somewhere</h3>
           <p>
-            Stop chasing someone else's journey.
-            Compete with the person you were yesterday.
+            You don't need to be great to start. Start today,
+            keep improving, and let consistency turn small
+            efforts into big results.
           </p>
-
-          <a href="#" class="read">READ STORY →</a>
-
         </div>
-
       </article>
 
     </div>
-
   </section>
 
-
-  <!-- MOTIVATIONAL SECTION -->
-  <section class="motivation" id="motivation">
-
-    <div class="motivation-content">
-
-      <h2>
-        NO<br>
-        <span>EXCUSES.</span><br>
-        JUST WORK.
-      </h2>
-
-      <p>
-        Your future self is watching what you do today.
-        Train when you're tired. Show up when nobody is
-        watching. Keep moving when quitting feels easier.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-
-    <div class="section-title">
-
-      <h2>
-        WHY <span>ATHLETIX?</span>
-      </h2>
-
-    </div>
-
-    <p style="
-      max-width: 850px;
-      margin: auto;
-      color: #999;
-      text-align: center;
-      line-height: 2;
-    ">
-      ATHLETIX is a sports motivation platform built around
-      one simple idea: your biggest competition is yourself.
-      Whether you're a professional athlete, beginner,
-      runner, footballer, gym enthusiast or simply someone
-      chasing a goal, keep showing up and keep getting better.
-    </p>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <h2>ATHLET<span>IX</span></h2>
-
+  <section class="quote">
     <p>
-      © 2026 ATHLETIX — Train. Believe. Conquer.
+      "Success isn't given. It's earned one workout,
+      one challenge, and one decision at a time."
     </p>
+  </section>
 
+  <section class="section" id="about">
+    <div class="about">
+      <h2>About Rise & Grind</h2>
+      <p>
+        Rise & Grind is a sports motivation blog created for
+        athletes, fitness enthusiasts, and anyone who refuses
+        to settle for average. Our goal is simple:
+        inspire you to show up, work hard, and keep going.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Rise & Grind. Train. Believe. Achieve.</p>
   </footer>
 
 </body>
